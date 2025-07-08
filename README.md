@@ -177,6 +177,63 @@ Document → summarizer.py → summary → Display
 
 
 
+## 📬 Postman API Testing Guide
+
+
+This project uses Together AI's Large Language Model (LLM) API for research summarization. You can test the API functionality using Postman.
+
+
+### 🔹 Steps to Test the API
+
+
+1. **Import the Collection**  
+   Open Postman → Click `Import` → Upload the file:  
+   `postman/postman_collection.json`
+
+
+3. **(Optional) Import the Environment**  
+   If you prefer using environment variables, also import:  
+   `postman/postman_environment.json`
+
+
+4. **Set the Environment Variable**  
+   - In Postman, select the environment dropdown (top right) → Choose `Together-env`
+   - Click the 👁️  icon next to it
+   - Set the variable `TOGETHER_API_KEY` with your actual API key from [Together AI](https://docs.together.ai/docs)
+
+5. **Send the Request**
+
+   
+   The request included in the collection sends a prompt to Together AI's LLM API
+   
+
+   **API Endpoint:**
+
+https://api.together.xyz/v1/chat/completions
+
+
+Make sure the header includes:
+
+Authorization: Bearer {{TOGETHER_API_KEY}}
+
+Content-Type: application/json
+
+
+
+
+**Sample JSON Body:**
+```json
+{
+  "model": "meta-llama/Llama-3-70b-chat-hf",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain Newton’s Second Law"
+    }
+  ]
+}
+
+
 
 
 
