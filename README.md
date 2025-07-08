@@ -47,6 +47,7 @@ Works with structured documents like reports and research papers.
 🔹 Challenge Me
 
 — Automatically generates 3 comprehension/logic questions.
+
 — Evaluates user answers and provides feedback with justification.
 
 
@@ -54,7 +55,9 @@ Works with structured documents like reports and research papers.
 ✅ Contextual Understanding
 
 — All answers are grounded in the actual content.
+
 — Snippet-based referencing (e.g., “Paragraph 3 of Section 1”).
+
 — Minimizes hallucination or irrelevant answers.
 
 
@@ -73,47 +76,69 @@ Backend: Python modules (Flask-style structure).
 
 🌟 Bonus Features (implemented)
 
+
 ✅ Memory Handling: Enables follow-up questions with historical context.
 
+
 ✅ Answer Highlighting: Justifies responses with cited snippets.
+
+
 
 
 
 🏗 Setup Instructions
 
 
+
 Clone the repository:
+
+
 git clone https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization.git
+
+
 
 cd -Smart-Assistant-for-Research-Summarization
 
+
 Install dependencies:
+
 pip install -r requirements.txt
+
 
 Run the app locally:
 
 streamlit run main.py --server.port 10000 --server.address 0.0.0.0
 
 
+
 🌐 Deployment (Render)
+
 
 To deploy using Render:
 
+
 Push the repository to GitHub.
+
 
 Visit: https://render.com
 
+
 Click “New → Web Service”
+
 
 Configuration:
 
 Build Command:
+
 pip install -r requirements.txt
 
 Start Command:
+
 streamlit run main.py --server.port 10000 --server.address 0.0.0.0
 
 Deploy and access your app online.
+
+
 
 
 🧠 Architecture Flow
@@ -135,6 +160,8 @@ utils.py — Handles API calls to LLM.
 
 📌 Model Layer — Together AI API
 → Uses LLaMA 3/8B for summarization, Q&A, and challenge evaluation.
+
+
 
 
 🎯 Reasoning Flow
@@ -174,6 +201,8 @@ Smart-Assistant-for-Research-Summarization\
 
 
 📽 Demo
+
+
 🎥 Click here to watch the demo
 
 
