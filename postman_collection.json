@@ -1,0 +1,46 @@
+{
+    "info": {
+        "name": "Smart Assistant - Together AI API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_postman_id": "smart-assistant-collection"
+    },
+    "item": [
+        {
+            "name": "Together AI - Chat Completion",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{TOGETHER_API_KEY}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"model\": \"meta-llama/Llama-3-70b-chat-hf\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"Explain Newton\\u2019s 2nd law of motion.\"\n        }\n    ]\n}"
+                },
+                "url": {
+                    "raw": "https://api.together.xyz/v1/chat/completions",
+                    "protocol": "https",
+                    "host": [
+                        "api",
+                        "together",
+                        "xyz"
+                    ],
+                    "path": [
+                        "v1",
+                        "chat",
+                        "completions"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
