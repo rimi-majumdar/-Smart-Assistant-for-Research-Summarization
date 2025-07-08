@@ -2,7 +2,7 @@
 
 ## 📌 Objective
 
-This project aims to simulate a document-aware **GenAI assistant** that can:
+This project aims to simulate a document-aware **AI assistant** that can:
 - Answer comprehension and inference-based questions from user-uploaded documents.
 - Generate logic-based questions and evaluate user responses.
 - Justify every answer with a direct reference from the document.
@@ -15,7 +15,7 @@ Traditional tools fail to deeply understand complex documents like research pape
 
 The assistant can:
 - Read and understand long PDF/TXT documents.
-- Support free-form Q&A and logic-based quizzes.
+- Support free-form Q&A and logic-based questions.
 - Provide contextual references from the uploaded content.
 
 ---
@@ -71,34 +71,45 @@ graph TD
     G --> H[User submits answers]
     H --> I[Assistant evaluates and gives feedback with justification]
     F --> J[Answer with snippet + justification]
-⚙️ Setup Instructions
-Clone the Repository
+
+
+
+## 🏗 Setup Instructions
+
+1. Clone the repo:
 
 bash
-Copy
-Edit
 git clone https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization.git
 cd -Smart-Assistant-for-Research-Summarization
-Create and Activate a Virtual Environment
+
+
+2. Install dependencies:
 
 bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate  # For Windows: venv\Scripts\activate
-Install Required Packages
-
-bash
-Copy
-Edit
 pip install -r requirements.txt
-Run the Application
+
+
+3. Run the app locally:
 
 bash
-Copy
-Edit
-streamlit run app.py
-⚠️ Make sure to add your API key in the .env file or inside config.py as required by your model (e.g., OpenAI/TogetherAI).
+streamlit run main.py --server.port 10000 --server.address 0.0.0.0
+
+
+---
+
+## 🚀 Deployment on Render
+
+1. Push this repo to GitHub
+2. Go to [https://render.com](https://render.com)
+3. Click "New → Web Service"
+4. Use:
+
+   * Build Command: pip install -r requirements.txt
+   * Start Command: streamlit run main.py --server.port 10000 --server.address 0.0.0.0
+5. Wait for deployment and open your URL
+
+---
+
 
 📂 Folder Structure
 bash
