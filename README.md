@@ -17,15 +17,15 @@ An intelligent research assistant that helps researchers upload papers, get conc
 
 * 🎯 Challenge Me mode:
 
-  * Automatically generates custom MCQs or open-ended questions
+  * Automatically generates open-ended questions
   * Evaluates and explains correctness of user answers
 
-* 🧵 Memory Handling (Bonus):
+* 🧵 Memory Handling :
 
  
   * Follow-up questions are answered using full conversational history
 
-* 🔍 Answer Highlighting (Bonus):
+* 🔍 Answer Highlighting :
 
   * Displays supporting document snippet for each answer
 
