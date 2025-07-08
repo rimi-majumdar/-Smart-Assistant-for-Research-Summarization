@@ -2,7 +2,7 @@
 
 
 
-🔗 Live App:https://smart-assistant-for-research.onrender.com/)
+🔗 Live App:https://smart-assistant-for-research.onrender.com/
 
 
 📌 Objective
