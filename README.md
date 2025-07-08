@@ -258,7 +258,9 @@ Smart-Assistant-for-Research-Summarization\
 │       ├── index.cs\
 │       └── index.js\
 ├── README.md\
-├── rmain.py \
+├── main.py \
+├── postman_collections.json \
+├── postman_environments.json \
 └── requirements.txt
 
 
