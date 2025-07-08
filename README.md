@@ -1,4 +1,5 @@
 # 🧠 Smart Assistant for Research Summarization
+🔗 Live App: https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization
 
 ## 📌 Objective
 
@@ -94,53 +95,33 @@ streamlit run main.py --server.port 10000 --server.address 0.0.0.0
 ---
 
 🧠 Architecture Flow
+📌 Interface Layer — Streamlit
+→ Handles document upload, user input, output rendering.
 
-Interface Layer: Streamlit Frontend (main.py )
+📌 Processing Layer — backend/
 
-Provides document upload, mode selection, inputs & outputs
+processor.py — Extracts text from uploaded documents.
 
-Communicates with backend via direct Python imports
+summarizer.py — Sends content to LLM for summarization.
 
-Processing Layer: backend/
+qna_engine.py — Processes free-form Q&A.
 
-processor.py → Extracts text from PDF/TXT using PyMuPDF
+challenge_generator.py — Creates and evaluates logic questions.
 
-summarizer.py → Summarizes document via LLM
+utils.py — Handles API calls to LLM.
 
-challenge_generator.py → Generates & evaluates questions via LLM
+📌 Model Layer — Together AI API
+→ Uses LLaMA 3/8B for summarization, Q&A, and challenge evaluation.
 
-qna_engine.py → Handles open-form Q&A grounded in doc
-
-utils.py → Sends LLM API requests 
-
-Model Layer: Together AI API (LLaMA 3/8b)
-
-Responds to prompt-engineered queries
-
-Handles summarization, question generation, answer evaluation
-
-
-🎯 Reasoning Flow per Mode
-
+🎯 Reasoning Flow
 A. Ask Anything
-
-User uploads doc → processor.py extracts → user types Q
-→ qna_engine.py prompts LLaMA with doc+Q
-→ LLM returns answer → Display with snippet
+User uploads → processor.py → user asks → qna_engine.py → LLM response with reference → Output
 
 B. Challenge Me
-
-→ summarizer.py summarizes
-→ challenge_generator.py creates 3 Qs from doc
-→ User answers
-→ evaluate_answers() sends doc + Q + A to LLM
-→ LLM returns scored feedback + justification → Displayed
+User uploads → summarizer.py → challenge_generator.py → user answers → evaluate_answers() → feedback
 
 C. Auto Summary
-
-→ summarizer.py sends document to LLM with summary prompt
-→ Returns 150-word summary → Displayed
-
+Document → summarizer.py → summary → Display
 
 📂 Folder Structure
 Smart-Assistant-for-Research-Summarization/
@@ -149,18 +130,19 @@ Smart-Assistant-for-Research-Summarization/
 │   ├── processor.py
 │   ├── qna_engine.py
 │   ├── summarizer.py
-│   ├── utils.py
+│   └── utils.py
 ├── frontend/
 │   ├── index.html
 │   ├── postcss.config.js
 │   ├── tailwind.config.js
 │   └── src/
-│   ├── app.js
-│   ├── index.cs
-│   ├── index.js
+│       ├── app.js
+│       ├── index.cs
+│       └── index.js
 ├── README.md
 ├── rmain.py 
 ├── requirements.txt
+
 
 📽️ Demo
 🎥 Click here to watch the demo
