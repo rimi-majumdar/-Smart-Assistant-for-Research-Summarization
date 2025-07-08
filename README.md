@@ -209,7 +209,7 @@ This project uses Together AI's Large Language Model (LLM) API for research summ
 
    **API Endpoint:**
 
-https://api.together.xyz/v1/chat/completions
+
 
 
 Make sure the header includes:
