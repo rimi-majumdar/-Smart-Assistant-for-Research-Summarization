@@ -2,9 +2,11 @@
 
 
 
-🔗 Live App: https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization
+🔗 Live App:[ https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization](https://smart-assistant-for-research.onrender.com/)
+
 
 📌 Objective
+
 This project builds a document-aware AI assistant capable of:
 
 Answering comprehension and inference-based questions from uploaded documents.
