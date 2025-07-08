@@ -57,23 +57,6 @@ The assistant can:
 - ✅ **Answer Highlighting**: Highlights **document snippets** that justify each answer.
 
 ---
-
-## 🏗️ Architecture / Reasoning Flow
-
-```mermaid
-graph TD
-    A[User Uploads PDF/TXT] --> B[Document Preprocessing & Summarization]
-    B --> C{Choose Mode}
-    C --> D[Ask Anything: User types a question]
-    C --> E[Challenge Me: System generates logic-based questions]
-    D --> F[LLM processes user question + context]
-    E --> G[LLM generates 3 questions]
-    G --> H[User submits answers]
-    H --> I[Assistant evaluates and gives feedback with justification]
-    F --> J[Answer with snippet + justification]
-
-
-
 ## 🏗 Setup Instructions
 
 1. Clone the repo:
@@ -97,7 +80,7 @@ streamlit run main.py --server.port 10000 --server.address 0.0.0.0
 
 ---
 
-## 🚀 Deployment on Render
+## 🌐 Deployment (Render)
 
 1. Push this repo to GitHub
 2. Go to [https://render.com](https://render.com)
@@ -110,29 +93,82 @@ streamlit run main.py --server.port 10000 --server.address 0.0.0.0
 
 ---
 
+🧠 Architecture Flow
+
+Interface Layer: Streamlit Frontend (main.py )
+
+Provides document upload, mode selection, inputs & outputs
+
+Communicates with backend via direct Python imports
+
+Processing Layer: backend/
+
+processor.py → Extracts text from PDF/TXT using PyMuPDF
+
+summarizer.py → Summarizes document via LLM
+
+challenge_generator.py → Generates & evaluates questions via LLM
+
+qna_engine.py → Handles open-form Q&A grounded in doc
+
+utils.py → Sends LLM API requests 
+
+Model Layer: Together AI API (LLaMA 3/8b)
+
+Responds to prompt-engineered queries
+
+Handles summarization, question generation, answer evaluation
+
+
+🎯 Reasoning Flow per Mode
+
+A. Ask Anything
+
+User uploads doc → processor.py extracts → user types Q
+→ qna_engine.py prompts LLaMA with doc+Q
+→ LLM returns answer → Display with snippet
+
+B. Challenge Me
+
+→ summarizer.py summarizes
+→ challenge_generator.py creates 3 Qs from doc
+→ User answers
+→ evaluate_answers() sends doc + Q + A to LLM
+→ LLM returns scored feedback + justification → Displayed
+
+C. Auto Summary
+
+→ summarizer.py sends document to LLM with summary prompt
+→ Returns 150-word summary → Displayed
+
 
 📂 Folder Structure
-bash
-Copy
-Edit
 Smart-Assistant-for-Research-Summarization/
-│
-├── app.py                    # Streamlit main entry point
-├── backend/                  # Core logic
-│   ├── qa_engine.py          # Handles Q&A and challenge logic
-│   ├── summarizer.py         # Summarization module
-│   └── memory_handler.py     # Memory support for follow-ups
-│
-├── utils/
-│   └── pdf_reader.py         # Extract text from PDF/TXT
-│
+├── backend/
+│   ├── challenge_generator.py
+│   ├── processor.py
+│   ├── qna_engine.py
+│   ├── summarizer.py
+│   ├── utils.py
+├── frontend/
+│   ├── index.html
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   └── src/
+│   ├── app.js
+│   ├── index.cs
+│   ├── index.js
+├── README.md
+├── rmain.py 
 ├── requirements.txt
-└── README.md
+
 📽️ Demo
 🎥 Click here to watch the demo
-(Add link when available)
 
-🙌 Author
-Rimi Majumdar
-🔗 GitHub Profile
+
+https://github.com/user-attachments/assets/5f4b7168-4a1c-4aa8-bb22-fc49ee3f73d8
+
+
+## 🧾Contact
+Developed by Rimi Majumdar as part of the Data Science Internship Task.
 
