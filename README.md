@@ -1,129 +1,127 @@
-# Smart Assistant for Research Summarization 
+# 🧠 Smart Assistant for Research Summarization
 
-An intelligent research assistant that helps researchers upload papers, get concise summaries, ask context-aware questions, and even test their understanding through custom-generated challenges.
+## 📌 Objective
 
-🔗 Live App: [https://smart-assistant-for-research.onrender.com](https://smart-assistant-for-research.onrender.com)
-
----
-
-## 🧠 Features
-
-* 📄 Upload PDF or TXT research papers
-* ✨ Automatic summary generation (max 150 words)
-* 💬 Ask Anything mode:
-
-  * Ask natural questions grounded in uploaded content
-  * Uses semantic search + OpenAI to find answers
-
-* 🎯 Challenge Me mode:
-
-  * Automatically generates open-ended questions
-  * Evaluates and explains correctness of user answers
-
-* 🧵 Memory Handling :
-
- 
-  * Follow-up questions are answered using full conversational history
-
-* 🔍 Answer Highlighting :
-
-  * Displays supporting document snippet for each answer
-
-* ⚡ Streamlit UI with 2-mode toggle (Ask/Challenge)
-* 🚀 Deployable on Render
+This project aims to simulate a document-aware **GenAI assistant** that can:
+- Answer comprehension and inference-based questions from user-uploaded documents.
+- Generate logic-based questions and evaluate user responses.
+- Justify every answer with a direct reference from the document.
 
 ---
 
-## 🧱 Architecture Overview
+## 🧩 Problem Statement
 
-1. 📂 Upload Document (PDF or TXT) via Streamlit
-2. 📃 Document text is extracted using PyPDF2 and cleaned
-3. 🧠 Summary is generated via backend/summarizer.py
-4. 💬 In "Ask Anything" mode:
+Traditional tools fail to deeply understand complex documents like research papers or technical manuals. This assistant is designed to go beyond keyword searches and provide **contextual understanding**, **reasoning**, and **justified responses**.
 
-   * Question is routed to backend/qna\_engine.py
-   * Uses embedding search + history-aware prompt to answer
-
-5. 🎓 In "Challenge Me" mode:
-
-   * Uses backend/challenge\_generator.py to make  questions
-   * Evaluates user response and returns feedback
-
-
+The assistant can:
+- Read and understand long PDF/TXT documents.
+- Support free-form Q&A and logic-based quizzes.
+- Provide contextual references from the uploaded content.
 
 ---
 
-## 📁 Directory Structure
+## 🚀 Features
 
-```
-Smart-Assistant-for-Research-Summarization/
-🔼 backend/
-🔼 summarizer.py
-🔼 qna_engine.py
-🔼 challenge_generator.py
-🔼 memory.py
-🔼 memory.json
-🔼 main.py
-🔼 requirements.txt
-🔼 .streamlit/
-🔼 config.toml
-🔼 README.md
-```
+### ✅ 1. Document Upload
+- Supports `.pdf` and `.txt` formats.
+- Accepts structured English documents such as reports and research papers.
+
+### ✅ 2. Interaction Modes
+
+#### 🔹 a. Ask Anything
+- Users can ask **free-form questions** based on the uploaded document.
+- The assistant answers with **contextual understanding** and direct references.
+
+#### 🔹 b. Challenge Me
+- Automatically generates **3 logic/comprehension-based questions**.
+- Users attempt to answer them.
+- The assistant evaluates the responses and provides **feedback with justification**.
+
+### ✅ 3. Contextual Understanding
+- All responses are **grounded in actual document content**.
+- Each answer includes a snippet reference, e.g., “*Paragraph 3 of Section 1*”.
+- Avoids hallucinations or fabrications.
+
+### ✅ 4. Auto Summary
+- Instantly generates a **≤150-word summary** of the uploaded document.
+
+### ✅ 5. Application Architecture
+- **Frontend**: Built using [Streamlit](https://streamlit.io/) for a simple, interactive web interface.
+- **Backend**: Powered by Python (Flask-based logic modules).
 
 ---
 
-## 🏗️ Setup Instructions
+## 🌟 Bonus Features (Implemented)
 
-1. Clone the repo:
+- ✅ **Memory Handling**: Handles follow-up questions using prior context.
+- ✅ **Answer Highlighting**: Highlights **document snippets** that justify each answer.
 
-```bash
+---
+
+## 🏗️ Architecture / Reasoning Flow
+
+```mermaid
+graph TD
+    A[User Uploads PDF/TXT] --> B[Document Preprocessing & Summarization]
+    B --> C{Choose Mode}
+    C --> D[Ask Anything: User types a question]
+    C --> E[Challenge Me: System generates logic-based questions]
+    D --> F[LLM processes user question + context]
+    E --> G[LLM generates 3 questions]
+    G --> H[User submits answers]
+    H --> I[Assistant evaluates and gives feedback with justification]
+    F --> J[Answer with snippet + justification]
+⚙️ Setup Instructions
+Clone the Repository
+
+bash
+Copy
+Edit
 git clone https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization.git
 cd -Smart-Assistant-for-Research-Summarization
-```
+Create and Activate a Virtual Environment
 
-2. Install dependencies:
+bash
+Copy
+Edit
+python -m venv venv
+source venv/bin/activate  # For Windows: venv\Scripts\activate
+Install Required Packages
 
-```bash
+bash
+Copy
+Edit
 pip install -r requirements.txt
-```
+Run the Application
 
-3. Run the app locally:
+bash
+Copy
+Edit
+streamlit run app.py
+⚠️ Make sure to add your API key in the .env file or inside config.py as required by your model (e.g., OpenAI/TogetherAI).
 
-```bash
-streamlit run main.py --server.port 10000 --server.address 0.0.0.0
-```
+📂 Folder Structure
+bash
+Copy
+Edit
+Smart-Assistant-for-Research-Summarization/
+│
+├── app.py                    # Streamlit main entry point
+├── backend/                  # Core logic
+│   ├── qa_engine.py          # Handles Q&A and challenge logic
+│   ├── summarizer.py         # Summarization module
+│   └── memory_handler.py     # Memory support for follow-ups
+│
+├── utils/
+│   └── pdf_reader.py         # Extract text from PDF/TXT
+│
+├── requirements.txt
+└── README.md
+📽️ Demo
+🎥 Click here to watch the demo
+(Add link when available)
 
----
+🙌 Author
+Rimi Majumdar
+🔗 GitHub Profile
 
-## 🚀 Deployment on Render
-
-1. Push this repo to GitHub
-2. Go to [https://render.com](https://render.com)
-3. Click "New → Web Service"
-4. Use:
-
-   * Build Command: `pip install -r requirements.txt`
-   * Start Command: `streamlit run main.py --server.port 10000 --server.address 0.0.0.0`
-5. Wait for deployment and open your URL
-
----
-
-## ✅ Bonus Features Implemented
-
-* 🧵 GPT-style Memory Handling
-* 🧠 Follow-up questions answered using last 20 turns stored in memory.json
-* 🔍 Answer Highlighting: displays document snippet supporting each answer
-
----
-
-## 📽️ Optional: Demo Video (You can add later)
-
-```
-🎥 Demo: https://your-demo-link.com
-```
-
----
-
-## 📬 Contact
-
-Developed by Rimi Majumdar as part of the GenAI Internship Task.
