@@ -1,4 +1,7 @@
-🧠 Smart Assistant for Research Summarization
+# 🧠 Smart Assistant for Research Summarization
+
+
+
 🔗 Live App: https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization
 
 📌 Objective
