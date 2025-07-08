@@ -7,6 +7,7 @@
 
 📌 Objective
 
+
 This project builds a document-aware AI assistant capable of:
 
 Answering comprehension and inference-based questions from uploaded documents.
@@ -16,6 +17,8 @@ Generating logic-based challenges and evaluating responses.
 Justifying all answers using direct references from the document.
 
 🧩 Problem Statement
+
+
 Traditional tools often fall short in understanding complex documents such as research papers and technical manuals. This assistant addresses that gap with contextual reasoning and content-based responses.
 
 Capabilities include:
@@ -27,6 +30,8 @@ Handling free-form Q&A and logic-based challenges.
 Citing references from the uploaded material.
 
 🚀 Features
+
+
 ✅ Document Upload
 Accepts .pdf and .txt formats.
 
@@ -40,10 +45,14 @@ Works with structured documents like reports and research papers.
 — Automatically generates 3 comprehension/logic questions.
 — Evaluates user answers and provides feedback with justification.
 
+
+
 ✅ Contextual Understanding
 — All answers are grounded in the actual content.
 — Snippet-based referencing (e.g., “Paragraph 3 of Section 1”).
 — Minimizes hallucination or irrelevant answers.
+
+
 
 ✅ Auto Summary
 — Instant ≤150-word summary of the uploaded content.
@@ -53,13 +62,19 @@ Frontend: Streamlit-based interactive web interface.
 
 Backend: Python modules (Flask-style structure).
 
+
+
 🌟 Bonus Features (implemented)
 
 ✅ Memory Handling: Enables follow-up questions with historical context.
 
 ✅ Answer Highlighting: Justifies responses with cited snippets.
 
+
+
 🏗️ Setup Instructions
+
+
 Clone the repository:
 git clone https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization.git
 
@@ -129,6 +144,7 @@ Document → summarizer.py → summary → Display
 
 
 📂 Folder Structure
+
 Smart-Assistant-for-Research-Summarization/
 ├── backend/
 │   ├── challenge_generator.py
@@ -152,6 +168,12 @@ Smart-Assistant-for-Research-Summarization/
 
 📽 Demo
 🎥 Click here to watch the demo
+
+
+
+
+https://github.com/user-attachments/assets/046db8fc-ff5d-4603-b660-a86546937763
+
 
 
 🧾 Contact
