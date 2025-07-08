@@ -1,5 +1,7 @@
 # 🧠 Smart Assistant for Research Summarization
+
 🔗 Live App: https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization
+
 
 ## 📌 Objective
 
@@ -95,6 +97,7 @@ streamlit run main.py --server.port 10000 --server.address 0.0.0.0
 ---
 
 🧠 Architecture Flow
+
 📌 Interface Layer — Streamlit
 → Handles document upload, user input, output rendering.
 
@@ -114,6 +117,7 @@ utils.py — Handles API calls to LLM.
 → Uses LLaMA 3/8B for summarization, Q&A, and challenge evaluation.
 
 🎯 Reasoning Flow
+
 A. Ask Anything
 User uploads → processor.py → user asks → qna_engine.py → LLM response with reference → Output
 
@@ -140,8 +144,8 @@ Smart-Assistant-for-Research-Summarization/
 │       ├── index.cs
 │       └── index.js
 ├── README.md
-├── rmain.py 
-├── requirements.txt
+├── rmain.py
+└── requirements.txt
 
 
 📽️ Demo
