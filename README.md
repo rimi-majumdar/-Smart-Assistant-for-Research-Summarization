@@ -72,7 +72,7 @@ Backend: Python modules (Flask-style structure).
 
 
 
-🏗️ Setup Instructions
+🏗 Setup Instructions
 
 
 Clone the repository:
@@ -145,24 +145,24 @@ Document → summarizer.py → summary → Display
 
 📂 Folder Structure
 
-Smart-Assistant-for-Research-Summarization/
-├── backend/
-│   ├── challenge_generator.py
-│   ├── processor.py
-│   ├── qna_engine.py
-│   ├── summarizer.py
-│   └── utils.py
-├── frontend/
-│   ├── index.html
-│   ├── postcss.config.js
-│   ├── tailwind.config.js
-│   └── src/
-│       ├── app.js
-│       ├── index.cs
-│       └── index.js
-├── README.md
-├── rmain.py 
-├── requirements.txt
+Smart-Assistant-for-Research-Summarization\
+├── backend/ \
+│   ├── challenge_generator.py\
+│   ├── processor.py\
+│   ├── qna_engine.py\
+│   ├── summarizer.py\
+│   └── utils.py\
+├── frontend/\
+│   ├── index.html\
+│   ├── postcss.config.js\
+│   ├── tailwind.config.js\
+│   └── src/\
+│       ├── app.js\
+│       ├── index.cs\
+│       └── index.js\
+├── README.md\
+├── rmain.py \
+└── requirements.txt
 
 
 
@@ -178,4 +178,3 @@ https://github.com/user-attachments/assets/046db8fc-ff5d-4603-b660-a86546937763
 
 🧾 Contact
 Developed by Rimi Majumdar as part of the Data Science Internship Task.
-
