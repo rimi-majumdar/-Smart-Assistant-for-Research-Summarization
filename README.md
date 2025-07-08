@@ -2,7 +2,7 @@
 
 
 
-🔗 Live App:[ https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization](https://smart-assistant-for-research.onrender.com/)
+🔗 Live App:https://smart-assistant-for-research.onrender.com/)
 
 
 📌 Objective
