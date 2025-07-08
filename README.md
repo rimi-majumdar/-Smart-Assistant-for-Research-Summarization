@@ -177,6 +177,10 @@ Document → summarizer.py → summary → Display
 
 
 
+
+
+
+
 📂 Folder Structure
 
 Smart-Assistant-for-Research-Summarization\
