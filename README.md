@@ -2,128 +2,116 @@
 🔗 Live App: https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization
 
 📌 Objective
-This project aims to simulate a document-aware AI assistant that can:
+This project builds a document-aware AI assistant capable of:
 
-Answer comprehension and inference-based questions from user-uploaded documents.
+Answering comprehension and inference-based questions from uploaded documents.
 
-Generate logic-based questions and evaluate user responses.
+Generating logic-based challenges and evaluating responses.
 
-Justify every answer with a direct reference from the document.
+Justifying all answers using direct references from the document.
 
 🧩 Problem Statement
-Traditional tools fail to deeply understand complex documents like research papers or technical manuals.
-This assistant is designed to go beyond keyword searches and provide contextual understanding, reasoning, and justified responses.
+Traditional tools often fall short in understanding complex documents such as research papers and technical manuals. This assistant addresses that gap with contextual reasoning and content-based responses.
 
-The assistant can:
+Capabilities include:
 
-Read and understand long PDF/TXT documents.
+Understanding long-form .pdf or .txt documents.
 
-Support free-form Q&A and logic-based questions.
+Handling free-form Q&A and logic-based challenges.
 
-Provide contextual references from the uploaded content.
+Citing references from the uploaded material.
 
 🚀 Features
-✅ 1. Document Upload
-Supports .pdf and .txt formats.
+✅ Document Upload
+Accepts .pdf and .txt formats.
 
-Accepts structured English documents such as reports and research papers.
+Works with structured documents like reports and research papers.
 
-✅ 2. Interaction Modes
-🔹 a. Ask Anything
-Users can ask free-form questions based on the uploaded document.
+✅ Interaction Modes
+🔹 Ask Anything
+— Free-form Q&A grounded in document content with reference-based answers.
 
-The assistant answers with contextual understanding and direct references.
+🔹 Challenge Me
+— Automatically generates 3 comprehension/logic questions.
+— Evaluates user answers and provides feedback with justification.
 
-🔹 b. Challenge Me
-Automatically generates 3 logic/comprehension-based questions.
+✅ Contextual Understanding
+— All answers are grounded in the actual content.
+— Snippet-based referencing (e.g., “Paragraph 3 of Section 1”).
+— Minimizes hallucination or irrelevant answers.
 
-Users attempt to answer them.
+✅ Auto Summary
+— Instant ≤150-word summary of the uploaded content.
 
-The assistant evaluates the responses and provides feedback with justification.
+✅ Architecture
+Frontend: Streamlit-based interactive web interface.
 
-✅ 3. Contextual Understanding
-All responses are grounded in actual document content.
+Backend: Python modules (Flask-style structure).
 
-Each answer includes a snippet reference, e.g., “Paragraph 3 of Section 1”.
+🌟 Bonus Features (implemented)
 
-Avoids hallucinations or fabrications.
+✅ Memory Handling: Enables follow-up questions with historical context.
 
-✅ 4. Auto Summary
-Instantly generates a ≤150-word summary of the uploaded document.
+✅ Answer Highlighting: Justifies responses with cited snippets.
 
-✅ 5. Application Architecture
-Frontend: Built using Streamlit for a simple, interactive web interface.
-
-Backend: Powered by Python (Flask-based logic modules).
-
-🌟 Bonus Features (Implemented)
-✅ Memory Handling: Handles follow-up questions using prior context.
-
-✅ Answer Highlighting: Highlights document snippets that justify each answer.
-
-🏗 Setup Instructions
-Clone the repo:
-
-bash
-Copy
-Edit
+🏗️ Setup Instructions
+Clone the repository:
 git clone https://github.com/rimi-majumdar/-Smart-Assistant-for-Research-Summarization.git
-cd -Smart-Assistant-for-Research-Summarization
-Install dependencies:
 
-bash
-Copy
-Edit
+cd -Smart-Assistant-for-Research-Summarization
+
+Install dependencies:
 pip install -r requirements.txt
+
 Run the app locally:
 
-bash
-Copy
-Edit
 streamlit run main.py --server.port 10000 --server.address 0.0.0.0
+
+
 🌐 Deployment (Render)
-Push this repo to GitHub
 
-Go to https://render.com
+To deploy using Render:
 
-Click "New → Web Service"
+Push the repository to GitHub.
 
-Use:
+Visit: https://render.com
+
+Click “New → Web Service”
+
+Configuration:
 
 Build Command:
-
-nginx
-Copy
-Edit
 pip install -r requirements.txt
-Start Command:
 
-css
-Copy
-Edit
+Start Command:
 streamlit run main.py --server.port 10000 --server.address 0.0.0.0
-Wait for deployment and open your URL
+
+Deploy and access your app online.
+
 
 🧠 Architecture Flow
+
 📌 Interface Layer — Streamlit
 → Handles document upload, user input, output rendering.
 
 📌 Processing Layer — backend/
 
-processor.py — Extracts text from uploaded documents
+processor.py — Extracts text from uploaded documents.
 
-summarizer.py — Sends content to LLM for summarization
+summarizer.py — Sends content to LLM for summarization.
 
-qna_engine.py — Processes free-form Q&A
+qna_engine.py — Processes free-form Q&A.
 
-challenge_generator.py — Creates and evaluates logic questions
+challenge_generator.py — Creates and evaluates logic questions.
 
-utils.py — Handles API calls to LLM
+utils.py — Handles API calls to LLM.
 
 📌 Model Layer — Together AI API
 → Uses LLaMA 3/8B for summarization, Q&A, and challenge evaluation.
 
+
 🎯 Reasoning Flow
+
 A. Ask Anything
 User uploads → processor.py → user asks → qna_engine.py → LLM response with reference → Output
 
@@ -133,10 +121,9 @@ User uploads → summarizer.py → challenge_generator.py → user answers → e
 C. Auto Summary
 Document → summarizer.py → summary → Display
 
+
+
 📂 Folder Structure
-pgsql
-Copy
-Edit
 Smart-Assistant-for-Research-Summarization/
 ├── backend/
 │   ├── challenge_generator.py
@@ -153,11 +140,15 @@ Smart-Assistant-for-Research-Summarization/
 │       ├── index.cs
 │       └── index.js
 ├── README.md
-├── rmain.py
-└── requirements.txt
-📽️ Demo
-🎥 Click here to watch the demo:
-https://github.com/user-attachments/assets/5f4b7168-4a1c-4aa8-bb22-fc49ee3f73d8
+├── rmain.py 
+├── requirements.txt
+
+
+
+📽 Demo
+🎥 Click here to watch the demo
+
 
 🧾 Contact
 Developed by Rimi Majumdar as part of the Data Science Internship Task.
+
