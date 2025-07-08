@@ -38,16 +38,21 @@ Accepts .pdf and .txt formats.
 Works with structured documents like reports and research papers.
 
 ✅ Interaction Modes
+
 🔹 Ask Anything
+
 — Free-form Q&A grounded in document content with reference-based answers.
 
+
 🔹 Challenge Me
+
 — Automatically generates 3 comprehension/logic questions.
 — Evaluates user answers and provides feedback with justification.
 
 
 
 ✅ Contextual Understanding
+
 — All answers are grounded in the actual content.
 — Snippet-based referencing (e.g., “Paragraph 3 of Section 1”).
 — Minimizes hallucination or irrelevant answers.
@@ -55,9 +60,11 @@ Works with structured documents like reports and research papers.
 
 
 ✅ Auto Summary
+
 — Instant ≤150-word summary of the uploaded content.
 
 ✅ Architecture
+
 Frontend: Streamlit-based interactive web interface.
 
 Backend: Python modules (Flask-style structure).
@@ -172,9 +179,14 @@ Smart-Assistant-for-Research-Summarization\
 
 
 
-https://github.com/user-attachments/assets/046db8fc-ff5d-4603-b660-a86546937763
+
+
+https://github.com/user-attachments/assets/bba6e86e-3141-47e5-91c0-6f6c644f9b45
+
+
 
 
 
 🧾 Contact
+
 Developed by Rimi Majumdar as part of the Data Science Internship Task.
